@@ -86,6 +86,8 @@ def build_cds_pangenome(genome_faa_paths, output_dir, name='Test',
         Binary allele x genome table
     df_genes : pd.DataFrame
         Binary gene x genome table
+    header_to_allele: dict
+        mapping of original header names to new allele names
     '''
     
     ''' Merge FAAs into one file with non-redundant sequences '''
@@ -197,6 +199,8 @@ def build_noncoding_pangenome(genome_data, output_dir, name='Test', flanking=(0,
         Binary non-coding allele x genome table
     df_nc_genes : pd.DataFrame
         Binary non-coding gene x genome table
+    header_to_allele: dict
+        mapping of original header names to new allele names
     '''
     
     ''' Extract non-coding sequences from all genomes '''

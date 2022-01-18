@@ -275,7 +275,7 @@ def build_noncoding_pangenome(genome_data, output_dir, name='Test', flanking=(0,
         print('Saving', output_gene_csv, '...')
         df_nc_genes.to_csv(output_gene_csv)
     
-    return df_nc_alleles, df_nc_genes
+    return df_nc_alleles, df_nc_genes, header_to_allele
     
 
 def consolidate_seqs(genome_paths, nr_out, shared_headers_out, missing_headers_out=None):

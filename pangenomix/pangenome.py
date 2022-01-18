@@ -140,7 +140,7 @@ def build_cds_pangenome(genome_faa_paths, output_dir, name='Test',
         print('Saving', output_gene_csv, '...')
         df_genes.to_csv(output_gene_csv)
 
-    return df_alleles, df_genes
+    return df_alleles, df_genes, header_to_allele
 
 
 def build_noncoding_pangenome(genome_data, output_dir, name='Test', flanking=(0,0),

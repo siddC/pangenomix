@@ -328,7 +328,7 @@ def consolidate_seqs(genome_paths, nr_out, shared_headers_out, missing_headers_o
     ''' Scan for redundant sequences across all files, build non-redundant file '''
     with open(nr_out, 'w+') as f_nr_out:
         for genome_path in genome_paths:
-            with open(genome_path, 'r',encoding='utf-8') as f:
+            with open(genome_path, 'r', encoding='utf-8') as f:
                 header = ''; seq_blocks = []
                 for line in f:
                     if line[0] == '>': # header encountered
@@ -1928,7 +1928,7 @@ def __get_header_from_fasta_line__(line):
 
 def __hash_sequence__(seq):
     ''' Hashes arbitary length strings/sequences to bytestrings '''
-    return hashlib.sha256(seq).digest()
+    return hashlib.sha256(seq.encode('utf-8')).digest()
 
 def __stream_stdout__(command):
     ''' Hopefully Jupyter-safe method for streaming process stdout '''

@@ -326,7 +326,7 @@ def consolidate_seqs(genome_paths, nr_out, shared_headers_out, missing_headers_o
             missing_headers.append(header)
     
     ''' Scan for redundant sequences across all files, build non-redundant file '''
-    with open(nr_out, 'w+') as f_nr_out:
+    with open(nr_out, 'wb+') as f_nr_out:
         for genome_path in genome_paths:
             with open(genome_path, 'r') as f:
                 header = ''; seq_blocks = []
